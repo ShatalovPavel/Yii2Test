@@ -6,6 +6,14 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'container' => [
+        'definitions' => [
+//            'yii\widgets\LinkPager' => ['maxButtonCount' => 5]
+        ],
+        'singletons' => [
+            'app\components\ApiServicesInterface' => ['app\components\ApiServices']
+        ]
+    ],
     'bootstrap' => ['log'],
     'defaultRoute' => 'home/index',
     'language' => 'ru',
